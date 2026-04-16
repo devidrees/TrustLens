@@ -15,6 +15,7 @@ import matplotlib.pyplot as plt
 def plot_class_distribution(
     imbalance_data: dict,
     save_path: str | None = None,
+    show: bool = True,
 ) -> plt.Figure:
     """
     Bar chart of class frequency distribution.
@@ -97,4 +98,8 @@ def plot_class_distribution(
     if save_path:
         fig.savefig(save_path, dpi=150, bbox_inches="tight")
 
+    if show:
+        plt.show()
+
+    plt.close(fig)
     return fig

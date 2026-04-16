@@ -15,6 +15,7 @@ import matplotlib.pyplot as plt
 def plot_embedding_separability(
     sep_data: dict,
     save_path: str | None = None,
+    show: bool = True,
 ) -> plt.Figure:
     """
     Render a compact metric card for embedding separability results.
@@ -120,4 +121,8 @@ def plot_embedding_separability(
     if save_path:
         fig.savefig(save_path, dpi=150, bbox_inches="tight")
 
+    if show:
+        plt.show()
+
+    plt.close(fig)
     return fig

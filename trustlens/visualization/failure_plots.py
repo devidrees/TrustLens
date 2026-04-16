@@ -16,6 +16,7 @@ import numpy as np
 def plot_confidence_gap(
     gap_data: dict,
     save_path: str | None = None,
+    show: bool = True,
 ) -> plt.Figure:
     """
     Plot confidence distributions for correct vs. incorrect predictions.
@@ -101,4 +102,8 @@ def plot_confidence_gap(
     if save_path:
         fig.savefig(save_path, dpi=150, bbox_inches="tight")
 
+    if show:
+        plt.show()
+
+    plt.close(fig)
     return fig

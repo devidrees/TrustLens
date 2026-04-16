@@ -245,6 +245,14 @@ class TrustReport:
                 plt.show()
             except Exception:
                 pass
+
+        try:
+            import matplotlib.pyplot as plt
+
+            plt.close(fig)
+        except Exception:
+            pass
+
         return fig
 
     # ------------------------------------------------------------------
@@ -644,4 +652,5 @@ def _plot_failure_grid(
     if save_path:
         fig.savefig(save_path, dpi=150, bbox_inches="tight")
 
+    plt.close(fig)
     return fig

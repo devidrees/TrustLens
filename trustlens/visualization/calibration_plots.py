@@ -24,6 +24,7 @@ def plot_reliability_diagram(
     n_bins: int = 10,
     title: str = "Reliability Diagram",
     save_path: str | None = None,
+    show: bool = True,
 ) -> plt.Figure:
     """
     Render a reliability (calibration) diagram.
@@ -129,4 +130,8 @@ def plot_reliability_diagram(
     if save_path:
         fig.savefig(save_path, dpi=150, bbox_inches="tight")
 
+    if show:
+        plt.show()
+
+    plt.close(fig)
     return fig

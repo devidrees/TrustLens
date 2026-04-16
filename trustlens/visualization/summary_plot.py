@@ -345,24 +345,25 @@ def _draw_confidence_gap(
 
     bins = np.linspace(0, 1, 21)
 
-    ax.hist(
-        correct_conf,
-        bins=bins.tolist(),
-        color=_C["green"],
-        alpha=0.65,
-        label=f"Correct (n={len(correct_conf):,})",
-        edgecolor="white",
-        density=True,
-    )
-    ax.hist(
-        incorrect_conf,
-        bins=bins.tolist(),
-        color=_C["red"],
-        alpha=0.55,
-        label=f"Incorrect (n={len(incorrect_conf):,})",
-        edgecolor="white",
-        density=True,
-    )
+    with np.errstate(divide="ignore", invalid="ignore"):
+        ax.hist(
+            correct_conf,
+            bins=bins.tolist(),
+            color=_C["green"],
+            alpha=0.65,
+            label=f"Correct (n={len(correct_conf):,})",
+            edgecolor="white",
+            density=True,
+        )
+        ax.hist(
+            incorrect_conf,
+            bins=bins.tolist(),
+            color=_C["red"],
+            alpha=0.55,
+            label=f"Incorrect (n={len(incorrect_conf):,})",
+            edgecolor="white",
+            density=True,
+        )
 
     if "failure" in results:
         gap_data = results["failure"].get("confidence_gap", {})

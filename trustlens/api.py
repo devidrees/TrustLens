@@ -142,6 +142,9 @@ def analyze(
     """
     _log = logger.info if verbose else logger.debug
 
+    if len(y_true) < 30:
+        print("Warning: Small dataset (n < 30) detected. Calibration metrics may be unreliable.")
+
     # ------------------------------------------------------------------
     # 1. Resolve probability predictions
     # ------------------------------------------------------------------
