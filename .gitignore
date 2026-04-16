@@ -53,6 +53,7 @@ examples/output/
 trust_report/
 *.png
 !docs/assets/*.png
+!assets/*.png
 
 # OS
 .DS_Store
