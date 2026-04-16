@@ -176,9 +176,9 @@ class TrustReport:
         prefix = " " * indent
         if isinstance(data, dict):
             for key, value in data.items():
-                if key.startswith("__") and key.endswith("__"):
+                if isinstance(key, str) and key.startswith("__") and key.endswith("__"):
                     continue
-                display_key = key.replace("_", " ").title()
+                display_key = str(key).replace("_", " ").title()
 
                 if isinstance(value, dict):
                     if verbose:
