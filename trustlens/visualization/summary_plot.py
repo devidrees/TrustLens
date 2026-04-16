@@ -347,7 +347,7 @@ def _draw_confidence_gap(
 
     ax.hist(
         correct_conf,
-        bins=bins,
+        bins=bins.tolist(),
         color=_C["green"],
         alpha=0.65,
         label=f"Correct (n={len(correct_conf):,})",
@@ -356,7 +356,7 @@ def _draw_confidence_gap(
     )
     ax.hist(
         incorrect_conf,
-        bins=bins,
+        bins=bins.tolist(),
         color=_C["red"],
         alpha=0.55,
         label=f"Incorrect (n={len(incorrect_conf):,})",
