@@ -3,6 +3,7 @@
 <br/>
 
 ⭐ If you find this useful, consider starring the repo
+
 🛠 Open issues available for contributors
 
 # TrustLens
