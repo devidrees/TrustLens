@@ -75,7 +75,7 @@ In `trustlens/visualization/representation_plots.py`, add `plot_embedding_2d()`:
 ### Issue #2: Add per-class accuracy metric to failure analysis
 **Label:** `good first issue`, `metrics`
 **Description:**
-Accuracy is often misleading in imbalanced datasets. We need to complement the `misclassification_summary` with a straightforward dictionary of per-class accuracy values. 
+Accuracy is often misleading in imbalanced datasets. We need to complement the `misclassification_summary` with a straightforward dictionary of per-class accuracy values.
 
 **Task:**
 Implement `per_class_accuracy(y_true, y_pred) -> dict` in `trustlens/metrics/failure.py`.
@@ -116,7 +116,7 @@ Add a safety guard in `trustlens/visualization/bias_plots.py` to handle 1-item c
 ```python
 # This should no longer crash
 report = class_imbalance_report(np.zeros(50, dtype=int))
-plot_class_distribution(report) 
+plot_class_distribution(report)
 ```
 **Difficulty:** Beginner
 
@@ -128,7 +128,7 @@ plot_class_distribution(report)
 The `analyze()` pipeline can take several seconds when multiple compute-intensive modules (like representation or large-scale calibration) are active. Users currently get no feedback until the entire report is built.
 
 **Task:**
-Integrate `tqdm` into the main `analyze()` loop in `trustlens/api.py`. 
+Integrate `tqdm` into the main `analyze()` loop in `trustlens/api.py`.
 - The progress bar should only show when `verbose=True`.
 - `tqdm` must remain an **optional dependency**. The code should use a fallback (e.g., logging) if `tqdm` is not installed.
 

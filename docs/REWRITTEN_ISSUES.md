@@ -46,7 +46,7 @@
 ---
 
 ### Issue #2: Add per-class accuracy metric to failure analysis
-**Problem:** Accuracy is often misleading in imbalanced datasets. We need to complement the `misclassification_summary` with a straightforward dictionary of per-class accuracy values. 
+**Problem:** Accuracy is often misleading in imbalanced datasets. We need to complement the `misclassification_summary` with a straightforward dictionary of per-class accuracy values.
 **Your task:** Implement `per_class_accuracy(y_true, y_pred) -> dict` in `trustlens/metrics/failure.py`.
 **Difficulty:** Beginner
 
